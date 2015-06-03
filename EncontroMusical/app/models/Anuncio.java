@@ -5,9 +5,7 @@ import play.db.ebean.Model;
 import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Johanny on 22/05/2015.
@@ -167,5 +165,13 @@ public class Anuncio extends Model {
 
     public String getDataDePostagem() {
         return dataDePostagem;
+    }
+
+
+    public static Map<String, String> opcaoQueBusca() {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        options.put("Formar banda", "Formar Banda");
+        options.put("Tocar ocasionalmente", "Tocar ocasionalmente");
+        return options;
     }
 }

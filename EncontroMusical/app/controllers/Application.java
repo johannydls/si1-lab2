@@ -2,7 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 import models.Anuncio;
-import play.*;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
@@ -14,6 +13,11 @@ public class Application extends Controller {
     public static Result index() {
         List<Anuncio> anuncios = Ebean.createQuery(Anuncio.class).findList();
         return ok(index.render(anuncios));
+    }
+
+    public static Result anuncios() {
+        List<Anuncio> listaAnuncios = Ebean.createQuery(Anuncio.class).findList();
+        return ok(anuncios.render(listaAnuncios));
     }
 
     public static Result sobre() {

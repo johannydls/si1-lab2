@@ -40,8 +40,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="/anuncios">Todos os anuncios</a></li>
                     <li><a href="/sobre">Sobre o sistema</a></li>
-                    <li><a href="/play">Sobre o Play! Framework</a></li>
                 </ul>
             </div>
         </div>
@@ -60,7 +60,6 @@
         <h3>Nao ha anuncios cadastrados!</h3>
     } else {
 
-
         <div class="container">
             <h3>Anuncios cadastrados:</h3>
             <div style="width:700px; height:400px; overflow:auto; border: 0.5px">
@@ -69,15 +68,13 @@
                         <tr>
                             <td>
                                 <a href="#" style="text-decoration: none">
-                                    <h3> @anuncio.getTitulo </h3>
-                                    <p><strong>Cidade:</strong> @anuncio.getCidade</p>
-                                    <p><strong>Bairro:</strong> @anuncio.getBairro</p>
+                                    <h3>@anuncio.getTitulo</h3>
+                                    <p><strong>Cidade:</strong> @anuncio.getCidade -
+                                        <strong>Bairro:</strong> @anuncio.getBairro
+                                    </p>
+
                                     <p><strong>Descricao:</strong> @anuncio.getDescricao</p>
-                                    <p><strong>Instrumentos:</strong> @anuncio.getInstrumentos</p>
-                                    <p><strong>Estilos pretendidos:</strong> @anuncio.getEstilosPretendidos</p>
-                                    <p><strong>Estilos nao pretendidos:</strong> @anuncio.getEstilosNaoPretendidos</p>
-                                    <p><strong>Opcao pretendida:</strong> @anuncio.getOpcaoQueBusca</p>
-                                    <p><strong>Formas de contato:</strong> @anuncio.getFormasDeContato</p>
+
                                     <p><strong>Data de publicacao:</strong> @anuncio.getDataDePostagem</p>
                                 </a>
                             </td>

@@ -1,1 +1,85 @@
-@()
+@(anuncios: List[Anuncio])
+
+@main("Lista de Anuncios") {
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" media="screen"
+    href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+
+    <link rel="stylesheet" media="screen"
+    href="@routes.Assets.at("stylesheets/materialize.min.css")">
+
+    <link rel="short icon" type="image/png"
+    href="@routes.Assets.at("images/favicon.png")">
+
+    <script
+    src="@routes.Assets.at("javascripts/jquery-1.11.3.min.js")"
+    type="text/javascript">
+    </script>
+
+    <style>
+    body {
+    padding-top: 50px;
+    }
+
+    .starter-template {
+    padding: 40px 15px;
+    text-align: center;
+    }
+    </style>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-collapse">
+                </button>
+                <a class="navbar-brand" href="/">Encontro Musical</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/anuncios">Todos os anuncios</a></li>
+                    <li><a href="/sobre">Sobre o sistema</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @if(anuncios.isEmpty) {
+        <h3>Nao ha anuncios cadastrados!</h3>
+    } else {
+
+        <div class="container">
+            <h3>Anuncios cadastrados:</h3>
+            <div style="width:700px; height:400px; overflow:auto; border: 0.5px">
+                <table class="table table-hover">
+                @for(anuncio <- anuncios) {
+                    <tr>
+                        <td>
+                            <a href="#" style="text-decoration: none">
+                                <h3> @anuncio.getTitulo </h3>
+
+                                <p><strong>Cidade:</strong> @anuncio.getCidade -
+                                    <strong>Bairro:</strong> @anuncio.getBairro
+                                </p>
+
+                                <p><strong>Descricao:</strong> @anuncio.getDescricao</p>
+                                <p><strong>Instrumentos:</strong> @anuncio.getInstrumentos</p>
+                                <p><strong>Estilos pretendidos:</strong> @anuncio.getEstilosPretendidos</p>
+                                <p><strong>Estilos nao pretendidos:</strong> @anuncio.getEstilosNaoPretendidos</p>
+                                <p><strong>Opcao pretendida:</strong> @anuncio.getOpcaoQueBusca</p>
+                                <p><strong>Formas de contato:</strong> @anuncio.getFormasDeContato</p>
+                                <p><strong>Data de publicacao:</strong> @anuncio.getDataDePostagem</p>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </table>
+            </div>
+
+        </div>
+        <hr>
+
+    }
+}
