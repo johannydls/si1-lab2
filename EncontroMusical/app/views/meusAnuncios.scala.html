@@ -1,6 +1,7 @@
 @(anuncios: List[Anuncio])
 
-@main("Lista de Anuncios") {
+
+@main("Meus Anuncios") {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
@@ -18,7 +19,7 @@
 
     <body>
 
-        <!--NAVBAR-->
+            <!--NAVBAR-->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -33,8 +34,8 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="/meusAnuncios">Seus an&uacute;ncios</a></li>
-                        <li class="active"><a href="/anuncios">Todos os an&uacute;ncios</a></li>
+                        <li class="active"><a href="/meusAnuncios">Seus an&uacute;ncios</a></li>
+                        <li><a href="/anuncios">Todos os an&uacute;ncios</a></li>
                         <li><a href="/sobre">Sobre o sistema</a></li>
                     </ul>
                     <form class="navbar-form navbar-right" role="search">
@@ -47,8 +48,19 @@
             </div>
         </nav>
 
-        <!--LISTA DOS ANUNCIOS-->
+        <script>
+
+        </script>
+
+            <!--LISTA DOS ANUNCIOS-->
         <div class="container starter-template">
+
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Digite seu codigo de acesso"
+                    id="codigo" required onkeypress="if ((window.event ? event.keyCode : event.which) == 13) {pesquisar();}">
+                </div>
+            </form>
 
 
 
@@ -56,39 +68,43 @@
             <h3>N&atilde;o h&aacute; an&uacute;ncios cadastrados!</h3>
         } else {
 
-            <div class="jumbotron">
-                <h1>An&uacute;ncios cadastrados</h1>
-            </div>
+            <h3>Seus an&uacute;ncios cadastrados:</h3>
+            <div class="starter-template">
 
-            <div class="list-group">
-            @for(anuncio <- anuncios) {
-                <a href="#" class="list-group-item">
-                    <h3 class="list-group-item-heading">@anuncio.getTitulo</h3>
-                    <p class="list-group-item-text">
-                    <p><strong>Cidade:</strong> @anuncio.getCidade -
-                        <strong>Bairro:</strong> @anuncio.getBairro</p>
+                <table class="table table-striped table-advance table-hover">
+                    <tbody>
+                        <tr>
+                            <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> T&iacute;tulo</th>
+                            <th><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Data </th>
+                            <th><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Cidade</th>
+                            <th><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Bairro</th>
+                            <th>Aberto?</th>
+                            <th><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> A&ccedil;&atilde;o</th>
+                        </tr>
 
-                    <p><strong>Descri&ccedil;&atilde;o:</strong> @anuncio.getDescricao</p>
-                    <p><strong>Instrumentos:</strong> @anuncio.getInstrumentos</p>
-                    <p><strong>Estilos pretendidos:</strong> @anuncio.getEstilosPretendidos</p>
-                    <p><strong>Estilos n&atilde;o pretendidos:</strong> @anuncio.getEstilosNaoPretendidos</p>
-                    <p><strong>Op&ccedil;&atilde;o pretendida:</strong> @anuncio.getOpcaoQueBusca</p>
-                    <p><strong>Formas de contato:</strong> @anuncio.getFormasDeContato</p>
-                    <p><strong>Data de publica&ccedil;&atilde;o:</strong> @anuncio.getDataDePostagem</p>
+                        @for(anuncio <- anuncios) {
+                            <tr id="meusAnuncios">
 
-                </a>
-            }
+
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+
             </div>
         }
         </div>
 
 
-        <!--SCRIPTS-->
+            <!--SCRIPTS-->
         <script src="@routes.Assets.at("javascripts/jquery-1.11.3.min.js")"></script>
         <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
         <script src="@routes.Assets.at("javascripts/bootswatch.js")"></script>
+        <script src="@routes.Assets.at("javascripts/uteis.js")"></script>
 
-        <!--STYLE-->
+            <!--STYLE-->
         <style>
         body {
         padding-top: 50px;

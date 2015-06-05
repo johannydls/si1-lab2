@@ -43,4 +43,9 @@ public class Application extends Controller {
         anuncio.save();
         return redirect(routes.Application.index());
     }
+
+    public static Result meusAnuncios() {
+        List<Anuncio> listaAnuncios = Ebean.createQuery(Anuncio.class).findList();
+        return ok(meusAnuncios.render(listaAnuncios));
+    }
 }

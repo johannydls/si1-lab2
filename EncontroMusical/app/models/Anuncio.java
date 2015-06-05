@@ -16,47 +16,50 @@ public class Anuncio extends Model {
     @Id @GeneratedValue
     private String id;
 
-    //@Column(name="titulo")
+    @Column(name="titulo")
     private String titulo;
 
-    //@Column(name="cidade")
+    @Column(name="cidade")
     private String cidade;
 
-    //@Column(name="bairro")
+    @Column(name="bairro")
     private String bairro;
 
-    //@Column(name="descricao")
+    @Column(name="descricao")
     private String descricao;
 
     //@Column(name="instrumentos")
     //private List<String> instrumentos;
 
-    //@Column(name="instrumentos")
+    @Column(name="instrumentos")
     private String instrumentos;
 
     //@Column(name="estilosPretendidos")
     //private List<String> estilosPretendidos;
-    //@Column(name="estilosPretendidos")
+    @Column(name="estilosPretendidos")
     private String estilosPretendidos;
 
     //@Column(name="estilosNaoPretendidos")
     //private List<String> estilosNaoPretendidos;
-    //@Column(name="estilosNaoPretendidos")
+    @Column(name="estilosNaoPretendidos")
     private String estilosNaoPretendidos;
 
-    //@Column(name="opcaoQueBusca")
+    @Column(name="opcaoQueBusca")
     private String opcaoQueBusca;
 
     //@Column(name="formasDeContato")
     //private List<String> formasDeContato;
-    //@Column(name="formasDeContato")
+    @Column(name="formasDeContato")
     private String formasDeContato;
 
-    //@Column(name="finalizado")
+    @Column(name="finalizado")
     private boolean finalizado;
 
-    //@Column(name="dataDePostagem")
+    @Column(name="dataDePostagem")
     private String dataDePostagem;
+
+    @Column
+    private String codigoDeAcesso;
 
     public Anuncio(){
         //Construtor padrao para o Hibernate
@@ -173,5 +176,13 @@ public class Anuncio extends Model {
         options.put("Formar banda", "Formar Banda");
         options.put("Tocar ocasionalmente", "Tocar ocasionalmente");
         return options;
+    }
+
+    public String getCodigoDeAcesso() {
+        return codigoDeAcesso;
+    }
+
+    public void setCodigoDeAcesso(String codigoDeAcesso) {
+        this.codigoDeAcesso = codigoDeAcesso;
     }
 }

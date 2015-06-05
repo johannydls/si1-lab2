@@ -10,12 +10,13 @@ create table anuncio (
   bairro                    varchar(255),
   descricao                 varchar(255),
   instrumentos              varchar(255),
-  estilos_pretendidos       varchar(255),
-  estilos_nao_pretendidos   varchar(255),
-  opcao_que_busca           varchar(255),
-  formas_de_contato         varchar(255),
+  estilosPretendidos        varchar(255),
+  estilosNaoPretendidos     varchar(255),
+  opcaoQueBusca             varchar(255),
+  formasDeContato           varchar(255),
   finalizado                boolean,
-  data_de_postagem          varchar(255),
+  dataDePostagem            varchar(255),
+  codigo_de_acesso          varchar(255),
   constraint pk_anuncio primary key (id))
 ;
 
