@@ -90,7 +90,7 @@
                             <th>Aberto?</th>
                             <th><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> A&ccedil;&atilde;o</th>
                         </tr>
-                        @for(anuncio <- anuncios) {
+                        @for(anuncio <- anuncios.reverse) {
                             <tr>
                                 <td>@anuncio.getTitulo</td>
                                 <td>@anuncio.getDataDePostagem</td>
