@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/elegant-icons-style.css")">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
 
-        <link rel="short icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="short icon" type="image/png" href="@routes.Assets.at("images/EncontroMusical.ico")">
 
     </head>
 
@@ -55,12 +55,19 @@
 
 
         <div class="container">
-            <div class="starter-template">
+            <div class="starter-template page-title">
 
                 <div class="jumbotron">
                     <h1>Encontro Musical</h1>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="@routes.Assets.at("images/music-icon.png")" alt="">
+                        </div>
+                    </div>
+
                     <p>A melhor rede social para marcar encontros musicais!</p>
-                    <br><br>
+                    <br>
                     <p><a href="@routes.Application.formNovoAnuncio" class="btn btn-primary btn-lg">Criar An&uacute;ncio!</a></p>
                 </div>
 
@@ -73,8 +80,6 @@
         @if(anuncios.isEmpty) {
             <h3>N&atilde;o h&aacute; an&uacute;ncios cadastrados!</h3>
         } else {
-
-
 
             <div class="starter-template jumbotron">
 
@@ -135,6 +140,10 @@
         <style>
         body {
         padding-top: 50px;
+        }
+
+        .page-title {
+            text-align: center;
         }
 
         .starter-template {
